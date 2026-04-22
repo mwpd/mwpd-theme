@@ -47,11 +47,9 @@ final class AssetResolver {
 	private static function get_manifest() {
 		if ( ! self::$manifest ) {
 			$manifest = get_stylesheet_directory() . '/assets/mix-manifest.json';
+			$contents = file_get_contents( $manifest );
 
-			if (
-				$map = file_get_contents( $manifest ) and
-				is_array( $map = json_decode( $map, true ) )
-			) {
+			if ( false !== $contents && is_array( $map = json_decode( $contents, true ) ) ) {
 				self::$manifest = $map;
 			}
 		}
