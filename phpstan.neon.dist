@@ -1,9 +1,8 @@
-includes:
-	# @see https://github.com/phpstan/phpstan-src/blob/master/conf/bleedingEdge.neon
-	- vendor/phpstan/phpstan/conf/bleedingEdge.neon
 parameters:
-	level: max
-	autoload_files:
+	level: 5
+	bootstrapFiles:
 	- %currentWorkingDirectory%/vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
 	paths:
 	- %currentWorkingDirectory%/src/
+	ignoreErrors:
+	- '#Unsafe usage of new static\(\).#'

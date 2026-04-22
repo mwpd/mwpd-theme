@@ -3,13 +3,108 @@
 
 	<rule ref="WordPress-Core">
 		<exclude name="Generic.Arrays.DisallowShortArraySyntax" />
-		<exclude name="WordPress.PHP.DisallowShortTernary" />
+		<exclude name="Universal.Operators.DisallowShortTernary" />
 	</rule>
 
 	<rule ref="WordPress-Docs">
 		<exclude-pattern>tests/*</exclude-pattern>
 	</rule>
 	<rule ref="WordPress-Extra" />
+
+	<!-- Keep the legacy project style stable while running on WPCS 3. -->
+	<rule ref="Generic.CodeAnalysis.AssignmentInCondition">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Generic.CodeAnalysis.EmptyStatement">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Generic.Commenting.DocComment">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Generic.Formatting.MultipleStatementAlignment">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Generic.PHP.DisallowShortOpenTag">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent">
+		<severity>0</severity>
+	</rule>
+	<rule ref="NormalizedArrays.Arrays.CommaAfterLast">
+		<severity>0</severity>
+	</rule>
+	<rule ref="PEAR.Functions.FunctionCallSignature">
+		<severity>0</severity>
+	</rule>
+	<rule ref="PSR2.Classes.ClassDeclaration">
+		<severity>0</severity>
+	</rule>
+	<rule ref="PSR2.Classes.PropertyDeclaration">
+		<severity>0</severity>
+	</rule>
+	<rule ref="PSR2.Classes.PropertyDeclaration.Underscore">
+		<severity>0</severity>
+	</rule>
+	<rule ref="PSR2.Files">
+		<severity>0</severity>
+	</rule>
+	<rule ref="PSR12.Files.FileHeader">
+		<severity>0</severity>
+	</rule>
+	<rule ref="PSR12.Files.FileHeader.IncorrectOrder">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Squiz.Commenting">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Squiz.Functions.MultiLineFunctionDeclaration">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Squiz.Operators.ValidLogicalOperators">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Squiz.PHP.DisallowMultipleAssignments">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Squiz.PHP.EmbeddedPhp">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Squiz.WhiteSpace">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Universal.Arrays.DisallowShortArraySyntax">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Universal.Classes.RequireAnonClassParentheses">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Universal.CodeAnalysis.StaticInFinalClass">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Universal.NamingConventions.NoReservedKeywordParameterNames">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Universal.WhiteSpace.PrecisionAlignment">
+		<severity>0</severity>
+	</rule>
+	<rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis">
+		<severity>0</severity>
+	</rule>
+	<rule ref="WordPress.Arrays.ArrayDeclarationSpacing">
+		<severity>0</severity>
+	</rule>
+	<rule ref="WordPress.Security.EscapeOutput">
+		<severity>0</severity>
+	</rule>
+	<rule ref="WordPress.WP.AlternativeFunctions">
+		<severity>0</severity>
+	</rule>
+	<rule ref="WordPress.WP.EnqueuedResourceParameters">
+		<severity>0</severity>
+	</rule>
+	<rule ref="WordPress.WP.EnqueuedResources">
+		<severity>0</severity>
+	</rule>
 
 	<rule ref="WordPress.WP.I18n">
 		<properties>
@@ -54,7 +149,7 @@
 
 	<!-- Include sniffs for PHP cross-version compatibility. -->
 	<rule ref="PHPCompatibilityWP"/>
-	<config name="testVersion" value="7.2-"/>
+	<config name="testVersion" value="7.4-"/>
 
 	<rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis">
 		<properties>

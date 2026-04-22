@@ -323,7 +323,7 @@ final class SimpleInjector implements Injector {
 
 		$type = $parameter->getType();
 
-		if ( null === $type || $type->isBuiltin() ) {
+		if ( ! $type instanceof ReflectionNamedType || $type->isBuiltin() ) {
 			return $this->resolve_argument_by_name(
 				$class,
 				$parameter,
@@ -331,9 +331,7 @@ final class SimpleInjector implements Injector {
 			);
 		}
 
-		$type = $type instanceof ReflectionNamedType
-			? $type->getName()
-			: (string) $type;
+		$type = $type->getName();
 
 		return $this->make_dependency( $injection_chain, $type );
 	}
